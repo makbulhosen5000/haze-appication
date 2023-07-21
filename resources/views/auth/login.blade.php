@@ -6,7 +6,7 @@
 
 	<title>Sign-in to CodingDuck</title>
    <!--Made with love by Mutiullah Samim -->
-   <link rel="icon" type="image/x-icon" href="{{ asset('public/frontend') }}/assets/imgs/logo.png">
+   <link rel="icon" type="image/x-icon" href="{{ asset('frontend') }}/assets/img/logo.png">
 	<!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -19,7 +19,7 @@
         @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('public/images/logo/login.jpg');
+background-image: url('images/logo/login.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;

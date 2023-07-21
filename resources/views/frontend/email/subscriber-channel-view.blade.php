@@ -67,39 +67,41 @@
                         <td>{{$channel->channel_Struggling}}</td>
                         <td>{{$channel->email}}</td>
 
-                         <td>
-                          <img src="{{ asset("storage/".$channel->image1) }}" width="100px";height='100px' alt="">
+                         {{-- <td>
+                          <img src="{{ asset("storage/".$channel->image1) }}" width="300px";height='300px' alt="">
+                        </td>  --}}
+                        <td>
+                          <img src="{{ !empty($channel->image1) ? url('storage/'.$channel->image1) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td> 
-
                          <td>
-                          <img src="{{ !empty($channel->image2) ? url('storage/images/call/'.$channel->image2) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image2) ? url('storage/'.$channel->image2) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td>  
                          <td>
-                          <img src="{{ !empty($channel->image3) ? url('public/images/call/'.$channel->image2) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image3) ? url('storage/'.$channel->image2) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td>  
                          <td>
-                          <img src="{{ !empty($channel->image4) ? url('public/images/call/'.$channel->image4) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image4) ? url('storage/'.$channel->image4) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td>                      
                          <td>
-                          <img src="{{ !empty($channel->image5) ? url('public/images/call/'.$channel->image5) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image5) ? url('storage/'.$channel->image5) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td> 
                          <td>
-                          <img src="{{ !empty($channel->image6) ? url('public/images/call/'.$channel->image6) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image6) ? url('storage/'.$channel->image6) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td> 
                          <td>
-                          <img src="{{ !empty($channel->image7) ? url('public/images/call/'.$channel->image7) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image7) ? url('storage/'.$channel->image7) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td> 
                          <td>
-                          <img src="{{ !empty($channel->image8) ? url('public/images/call/'.$channel->image8) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image8) ? url('storage/'.$channel->image8) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td> 
                          <td>
-                          <img src="{{ !empty($channel->image9) ? url('public/images/call/'.$channel->image9) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image9) ? url('storage/'.$channel->image9) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td> 
                          <td>
-                          <img src="{{ !empty($channel->image10) ? url('public/images/call/'.$channel->image10) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image10) ? url('storage/'.$channel->image10) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td> 
                          <td>
-                          <img src="{{ !empty($channel->image11) ? url('public/images/call/'.$channel->image11) : url('public/images/not_found_img.png') }}"id="image" width="100px";height='100px'>
+                          <img src="{{ !empty($channel->image11) ? url('storage/'.$channel->image11) : url('images/not_found_img.png') }}"id="image" width="300px";height='300px'>
                         </td> 
 
                         <td>
