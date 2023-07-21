@@ -2,9 +2,15 @@
 @section('content')
 
 
-    <form action="{{ route('one.to.one.call.store') }}" enctype="multipart/form-data" class="my-5"
+    <form action="{{ route('one.to.one.call.store') }}" method="POST" enctype="multipart/form-data" class="my-5"
         style="margin-left: 300px; margin-right: 300px">
         @csrf
+        @if (Session::get('success'))
+          <div class="alert alert-danger alert-dismissible">
+              <button type="button" class="close"  data-dismiss="alert">&times;</button>
+              <strong>{{ Session::get('success') }}</strong>
+          </div>
+        @endif
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -14,7 +20,7 @@
                 </ul>
             </div>
         @endif
-        <div class="row mb-4">
+        {{-- <div class="row mb-4">
             <div class="col">
                 <label for="">Channel Name</label>
                 <input type="text" class="form-control" placeholder="Channel Name" name="channel_name" required>
@@ -48,118 +54,89 @@
         </div>
         <div class="row mb-4">
             <div class="col">
-                <label for="">Your Mail</label>
+                <label for="">Your EMail</label>
                 <input type="text" class="form-control" placeholder="Your Email" name="email" required>
             </div>
-        </div>
+        </div> --}}
         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
                 <img src="{{ url('public/images/haze/h1.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image1" id="file"
-                    onchange="showImage(this,'image')" value='' required >
+                <input id="my-input" class="form-control" type="file" name="images[]" required >
             </div>
         </div>
         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
-
                 <img src="{{ url('public/images/haze/h2.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image2" id="file"
-                    onchange="showImage(this,'image')" value='' requered>
-
+                <input id="my-input" class="form-control" type="file" name="images[]" required >
             </div>
         </div>
-        <div class="row mb-4">
+         {{-- <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
-
                 <img src="{{ url('public/images/haze/h3.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image3" id="file"
-                    onchange="showImage(this,'image')" value='' requered>
-
+                <input id="my-input" class="form-control" type="file" name="image3" required >
             </div>
-        </div>
-        <div class="row mb-4">
+        </div> --}}
+        {{-- 
+         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
-
                 <img src="{{ url('public/images/haze/h4.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image4" id="file"
-                    onchange="showImage(this,'image')" value='' requered>
-
+                <input id="my-input" class="form-control" type="file" name="image4" required >
             </div>
         </div>
-        <div class="row mb-4">
+         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
-
                 <img src="{{ url('public/images/haze/h5.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image5" id="file"
-                    onchange="showImage(this,'image')" value='' requered>
-
+                <input id="my-input" class="form-control" type="file" name="image5" required >
             </div>
         </div>
-        <div class="row mb-4">
+         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
-
                 <img src="{{ url('public/images/haze/h6.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image6" id="file"
-                    onchange="showImage(this,'image')" value='' requered>
-
+                <input id="my-input" class="form-control" type="file" name="image6" required >
             </div>
         </div>
-        <div class="row mb-4">
+         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
-
                 <img src="{{ url('public/images/haze/h7.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image7" id="file"
-                    onchange="showImage(this,'image')" value='' requered>
-
+                <input id="my-input" class="form-control" type="file" name="image7" required >
             </div>
         </div>
-        <div class="row mb-4">
+         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
                 <img src="{{ url('public/images/haze/h8.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image8" id="file"
-                    onchange="showImage(this,'image')" value='' requered>
-
+                <input id="my-input" class="form-control" type="file" name="image8" required >
             </div>
         </div>
-        <div class="row mb-4">
+         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
-
                 <img src="{{ url('public/images/haze/h9.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image9" id="file"
-                    onchange="showImage(this,'image')" value='' requered>
-
+                <input id="my-input" class="form-control" type="file" name="image9" required >
             </div>
         </div>
-        <div class="row mb-4">
+         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
-
                 <img src="{{ url('public/images/haze/h10.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image10" id="file"
-                    onchange="showImage(this,'image')" value='' required>
-
+                <input id="my-input" class="form-control" type="file" name="image10" required >
             </div>
         </div>
-        <div class="row mb-4">
+         <div class="row mb-4">
             <div class="col">
                 <label for="">You Must Provide Us With These Screenshots Of Your Own Channel. (Overview)*</label>
-
                 <img src="{{ url('public/images/haze/h11.png') }}" id="image" style="width:495px;height:300px">
-                <input id="my-input" class="form-control" type="file" name="image11" id="file"
-                    onchange="showImage(this,'image')" value='' required>
-
+                <input id="my-input" class="form-control" type="file" name="image11" required >
             </div>
-        </div>
-
+        </div> --}}
+       
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

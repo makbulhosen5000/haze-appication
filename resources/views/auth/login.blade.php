@@ -147,7 +147,7 @@ margin-left: 4px;
 	
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn">
-						{{-- <p><a href="{{ route('password.request') }}" style="color: #FFC312">Forget Your Password?</a></p> --}}
+						<p><a href="{{ route('password.request') }}" style="color: #FFC312">Forget Your Password?</a></p>
 						
 					</div>
 				</form>

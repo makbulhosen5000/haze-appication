@@ -47,7 +47,7 @@
                         <td>{{$key++}}</td>
                         <td>{{$subscriber->email}}</td>
                         <td>
-                            <a href="{{route('subscribers.email.destroy',$subscriber->id)}} " id="delete" class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></a>
+                            <a href="{{route('user.email.destroy',$subscriber->id)}} " id="delete" class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach

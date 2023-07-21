@@ -59,7 +59,7 @@ Auth::routes();
     Route::get('/', [FrontendController::class, 'index']);
     Route::get('/haze-agency', [FrontendController::class, 'HazeAgency'])->name('haze.agency');
     Route::get('/one-to-one-call', [FrontendController::class, 'OneToOneCall'])->name('one.to.one.call');
-    Route::get('/one-to-one-call-store', [FrontendController::class, 'OneToOneCallStore'])->name('one.to.one.call.store');
+    Route::post('/one-to-one-call-store', [FrontendController::class, 'OneToOneCallStore'])->name('one.to.one.call.store');
     Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
     Route::post('/contact-us', [FrontendController::class, 'ContactStore'])->name('contact.store');
     Route::post('/subscribers-email', [FrontendController::class, "addSubscriber"])->name('store.subscribers.email');
@@ -301,14 +301,13 @@ Route::group(['middleware' => ['test']], function () {
         Route::post('/updated/{id}', [ProductController::class, 'update'])->name('products.update');
         Route::get('/destroy/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
     });
-    //User Email route for admin panel
-    Route::prefix('email')->group(function () {
-        Route::get('user-email-view', [FrontendController::class, 'UserEmailView'])->name('user.email.view');
-        Route::get('/user-email-destroy/{id}', [FrontendController::class, 'destroy'])->name('user.email.destroy');
-        //subscriber
+       //subscriber route for backend/admin panel
+        Route::prefix('subscriber')->group(function () {
+        Route::get('subscriber-channel-view', [FrontendController::class, 'SubscriberChannelView'])->name('subscriber.channel.view');
+        Route::get('/subscriber-channel-destroy/{id}', [FrontendController::class, 'SubscriberChannelDestroy'])->name('subscribers.channel.destroy');
         Route::get('/subscriber-view', [FrontendController::class, 'SubscriberIndex'])->name('subscriber.email.view');
-        Route::get('/subscriber-email-destroy/{id}', [FrontendController::class, 'SubscriberDestroy'])->name('subscribers.email.destroy');
-     
+        Route::get('/user-email-destroy/{id}', [FrontendController::class, 'SubscriberDestroy'])->name('user.email.destroy');
+        //subscriber
     });
 
 });

@@ -53,6 +53,31 @@
             </li>        
           </ul>
       </li>
+       <li class="nav-item has-treeview {{($prefix=='/subscriber')?'menu-open':''}} ">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+              Manage Subscribers
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('subscriber.channel.view')}} " class="nav-link {{($route=='subscriber.channel.view')?'active':''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Channel Subscribers</p>
+                </a>
+              </li>
+            </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('subscriber.email.view')}} " class="nav-link {{($route=='subscriber.email.view')?'active':''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Email Subscribers</p>
+                </a>
+              </li>
+            </ul>
+        </li>
       {{-- user info end --}}
       {{-- logo start --}}
         {{-- <li class="nav-item has-treeview {{($prefix=='/logos')?'menu-open':''}} ">
@@ -351,31 +376,7 @@
               </li>
             </ul>
         </li> --}}
-        <li class="nav-item has-treeview {{($prefix=='/email')?'menu-open':''}} ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-              Manage Email
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('user.email.view')}} " class="nav-link {{($route=='user.email.view')?'active':''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>User Email</p>
-                </a>
-              </li>
-            </ul>
-               <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('subscriber.email.view')}} " class="nav-link {{($route=='subscriber.email.view')?'active':''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Subscribers</p>
-                </a>
-              </li>
-            </ul>
-        </li>
+       
 
         @endif
         </ul>

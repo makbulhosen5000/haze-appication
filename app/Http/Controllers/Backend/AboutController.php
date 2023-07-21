@@ -46,7 +46,6 @@ class AboutController extends Controller
         return $request;
         $userData->image='';
        }
-       $userData->save();
        $userData->created_by=$request->created_by;
        $userData->updated_by=$request->updated_by;
        $userData->save();

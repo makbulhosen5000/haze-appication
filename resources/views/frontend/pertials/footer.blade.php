@@ -8,7 +8,7 @@
                     </li>
 
                     <li class="footer__nav-item">
-                        <a href="/collections" target="_self">All Products</a>
+                        <a href="{{ url('/') }}">All Products</a>
                     </li>
 
                 </ul>

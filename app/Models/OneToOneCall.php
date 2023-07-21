@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class OneToOneCall extends Model
 {
     use HasFactory;
+
 }
